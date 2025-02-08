@@ -24,8 +24,18 @@ input {
     p-2 text-black; 
 }
 
+.sidebar {
+  @apply flex flex-col gap-2
+  ps-2 pl-2 bg-gradient-to-tr
+  from-blue-500 to-pink-400
+  text-white
+  pt-3
+  w-[200px] h-screen;
+}
 
-
+.sidebar a {
+  @apply ps-3;
+}
 
 
 
