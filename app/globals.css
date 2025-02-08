@@ -2,20 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.button-blue {
+  @apply bg-blue-500 text-white p-3 rounded-xl;
+}
+.button-red {
+  @apply bg-red-500 text-white p-3 rounded-xl;
+}
+.signIn {
+  @apply flex flex-col gap-5 items-center 
+    justify-center h-screen;
+}
+.signIn .box {
+  @apply flex flex-col gap-5 items-center
+    bg-gradient-to-tr from-purple-600 to-pink-600 p-5 rounded-3xl text-white;
+}
+.signIn h1 {
+  @apply text-white;
+}
+input {
+   @apply border border-gray-500 rounded-xl 
+    p-2 text-black; 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+
+
+
+
