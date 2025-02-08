@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation"; // เติมตรงนี้
 import { useState, useEffect } from "react"; // เติมตรงนี้
+import Swal from "sweetalert2"; // เติมตรงนี้
 
 export default function Sidebar() {
     const router = useRouter(); // เติมตรงนี้
@@ -14,9 +15,19 @@ export default function Sidebar() {
         }
     }, []);
 
-    const handleSignOut = () => {
-        localStorage.removeItem('userId'); // ทำลายข้อมูล userId ที่อยู่ใน localStorage
-        router.push('/settings'); // นำทางไปที่หน้า settings
+    const handleSignOut = async () => {
+        const button = await Swal.fire({
+            title: 'ยืนยันการออกจากระบบ',
+            text: 'คุณต้องการออกจากระบบหรือไม่?',
+            icon: 'question',
+            showCancelButton: true,
+            showConfirmButton: true
+        })
+
+        if (button.isConfirmed) {
+            localStorage.removeItem('userId'); // ทำลายข้อมูล userId ที่อยู่ใน localStorage
+            router.push('/settings'); // นำทางไปที่หน้า settings
+        }
     }
 
     return (
