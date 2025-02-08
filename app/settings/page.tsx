@@ -9,6 +9,7 @@ export default function Page() {
     const router = useRouter(); // ใช้ useRouter เพื่อนำทางหน้าเว็บ
     const handleSignIn = () => {
         if (username === 'admin' && password === '1234') {
+            localStorage.setItem('userId', '1'); // เติมตรงนี้
             router.push('/settings/user'); // นำทางไปที่หน้า user
         } else {
             Swal.fire({
