@@ -25,8 +25,12 @@ export default function Sidebar() {
         })
 
         if (button.isConfirmed) {
+            // ทำลายข้อมูล userId ที่อยู่ใน localStorage และนำทางไปที่หน้า settings
+            // และให้ reload หน้า settings
             localStorage.removeItem('userId'); // ทำลายข้อมูล userId ที่อยู่ใน localStorage
             router.push('/settings'); // นำทางไปที่หน้า settings
+            window.location.reload(); // รีโหลดหน้า settings
+
         }
     }
 

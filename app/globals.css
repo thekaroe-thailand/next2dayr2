@@ -37,5 +37,18 @@ input {
   @apply ps-3;
 }
 
+button {
+  @apply bg-blue-500 text-white p-5 rounded-xl;
+}
+
+
+
+
+
+
+
+
+
+
 
 
